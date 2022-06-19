@@ -19,12 +19,13 @@ const Card = ({ data }) => {
 
    return (
       <VStack
-         spacing={2}
+         spacing={3}
          align='stretch'
          border='1px'
          borderRadius='1rem'
          p={2}
          mt={4}
+         bgGradient='linear(to-r, #0F2027, #203A43, #2C5364)'
       >
          <Map lat={lat} lon={lon} city={city} />
          <Box>
@@ -50,7 +51,6 @@ const Card = ({ data }) => {
          <Box>
             <Heading as='h3' size='sm'>Провайдер: {org}</Heading>
          </Box>
-         <Divider />
       </VStack>
    )
 }

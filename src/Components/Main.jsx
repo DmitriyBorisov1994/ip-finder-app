@@ -18,13 +18,13 @@ const Main = () => {
 
    return (
       <Box as='main' p={2}>
-         <Container maxW='4xl' color='white'>
+         < Container maxW='4xl' color='white' >
             <Heading as='h2' size='md' mb={2}>
                Информация по Вашему IP адресу...
             </Heading>
             <Card data={IPData} />
-         </Container>
-      </Box>
+         </Container >
+      </Box >
    )
 }
 
