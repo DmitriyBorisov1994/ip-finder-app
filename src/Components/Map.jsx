@@ -35,7 +35,7 @@ const Map = ({ lat, lon, city }) => {
    ];
 
    return (
-      <Box>
+      <Box boxShadow='dark-lg'>
          <ComposableMap
          /*projection="geoAzimuthalEqualArea"
          projectionConfig={{

@@ -1,17 +1,20 @@
 import React, { useEffect, useState } from 'react'
-import { Box, Container, Heading } from '@chakra-ui/react'
+import { Box, Container, Heading, Spinner } from '@chakra-ui/react'
 import axios from 'axios'
 
 import Card from './Card'
+import MySpinner from './MySpinner'
 
 const Main = () => {
 
    const [IPData, setIPData] = useState({})
+   const [isFetching, setIsFetching] = useState(false)
 
    useEffect(() => {
+      setIsFetching(true)
       axios.get('http://ip-api.com/json/?lang=ru')
          .then(({ data }) => {
-            console.log(data)
+            setIsFetching(false)
             setIPData(data)
          });
    }, [])
@@ -22,7 +25,7 @@ const Main = () => {
             <Heading as='h2' size='md' mb={2}>
                Информация по Вашему IP адресу...
             </Heading>
-            <Card data={IPData} />
+            {isFetching ? <MySpinner /> : <Card data={IPData} />}
          </Container >
       </Box >
    )
