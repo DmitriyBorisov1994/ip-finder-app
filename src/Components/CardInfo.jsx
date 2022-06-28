@@ -5,7 +5,7 @@ const CardInfo = ({ children }) => {
    return (
       <Box>
          <Divider />
-         <Heading as='h3' size='sm' p={2} boxShadow='dark-lg'>{children}</Heading>
+         <Heading as='h3' size='sm' p={4} boxShadow='dark-lg'>{children}</Heading>
          <Divider />
       </Box>
    )
