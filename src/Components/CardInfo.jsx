@@ -1,12 +1,10 @@
 import React from 'react'
-import { Box, Heading, Divider } from '@chakra-ui/react'
+import { Box, Heading } from '@chakra-ui/react'
 
 const CardInfo = ({ children }) => {
    return (
-      <Box>
-         <Divider />
-         <Heading as='h3' size='sm' p={4} boxShadow='dark-lg'>{children}</Heading>
-         <Divider />
+      <Box p={2} >
+         <Heading as='h3' size='sm' boxShadow='dark-lg' p={4} borderRadius='1rem'>{children}</Heading>
       </Box>
    )
 }

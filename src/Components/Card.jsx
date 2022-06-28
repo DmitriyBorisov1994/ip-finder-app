@@ -1,10 +1,9 @@
 import React from 'react'
 import { VStack } from '@chakra-ui/react'
 import Map from './Map'
-import CardInfo from './CardInfo'
+import CardList from './CardList'
 
 const Card = ({ data }) => {
-
    const {
       city,
       country,
@@ -18,23 +17,25 @@ const Card = ({ data }) => {
       lon
    } = data
 
+
    return (
       <VStack
-         spacing={3}
+         spacing={2}
          align='stretch'
-         border='1px'
+         border='2px'
          borderRadius='1rem'
-         p={4}
          mt={4}
-         bgGradient='linear(to-r, #0F2027, #203A43, #2C5364)'
       >
          <Map lat={lat} lon={lon} city={city} />
-         <CardInfo>IP адрес: {query}</CardInfo>
-         <CardInfo>Город: {city}</CardInfo>
-         <CardInfo>Страна: {country}, {countryCode}</CardInfo>
-         <CardInfo>Регион: {regionName}, {region}</CardInfo>
-         <CardInfo>Zip: {zip}</CardInfo>
-         <CardInfo>Провайдер: {org}</CardInfo>
+         <CardList
+            country={country}
+            countryCode={countryCode}
+            query={query}
+            region={region}
+            regionName={regionName}
+            zip={zip}
+            org={org}
+         />
       </VStack>
    )
 }
